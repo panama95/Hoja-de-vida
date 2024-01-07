@@ -410,6 +410,7 @@
     </div>
   </div>
 </div>
+<!-- Fix
 <div class="section" id="reference">
   <div class="container cc-reference">
     <div class="h4 mb-4 text-center title">References</div>
@@ -459,6 +460,36 @@
     </div>
   </div>
 </div>
+  -->
+  <div class="ai-chat">
+    <div class="chat-window">
+      <ul id="conversation">
+      </ul>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="user-message" placeholder="Escribe tu mensaje aquí...">
+      <button id="send-message">Enviar</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chatgpt@latest/dist/chatgpt.min.js"></script>
+  <script>
+    // Obtén la API key de ChatGPT
+    const apiKey = "tu-api-key";
+
+    // Crea el chatbot
+    const chatbot = new ChatGPT(apiKey);
+
+    // Escucha los eventos del chatbot
+    chatbot.on("message", (message) => {
+      // Agrega el mensaje a la conversación
+      document.querySelector("#conversation").appendChild(document.createTextNode(message));
+    });
+
+    // Inicia el chatbot
+    chatbot.start();
+  </script>
+
 <div class="section" id="contact">
   <div class="cc-contact-information" style="background-image: url('images/staticmap.png')">
     <div class="container">
